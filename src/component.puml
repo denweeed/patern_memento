@@ -1,0 +1,23 @@
+@startuml
+class Application {
+}
+
+class Calculator {
+    - _total: int
+    - _history: list
+    + add()
+    + subtract()
+    + undo()
+    + create_memento()
+    + set_memento()
+    + total()
+}
+
+class CalculatorMemento {
+    - total: int
+    - history: list
+}
+
+Application --> Calculator
+Calculator --> CalculatorMemento
+@enduml

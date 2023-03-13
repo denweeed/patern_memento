@@ -1,0 +1,22 @@
+@startuml
+
+class Calculator {
+    - _total: int
+    - _history: List[Tuple[str, int]]
+
+    + add(value: int): void
+    + subtract(value: int): void
+    + undo(): void
+    + create_memento(): CalculatorMemento
+    + set_memento(memento: CalculatorMemento): void
+    + total: int
+}
+
+class CalculatorMemento {
+    - total: int
+    - history: List[Tuple[str, int]]
+
+    + __init__(total: int, history: List[Tuple[str, int]])
+}
+
+@enduml

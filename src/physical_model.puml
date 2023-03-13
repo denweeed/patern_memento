@@ -1,0 +1,22 @@
+@startuml
+class Calculator {
+  - _total: int
+  - _history: list
+  + add(value)
+  + subtract(value)
+  + undo()
+  + create_memento(): CalculatorMemento
+  + set_memento(memento: CalculatorMemento)
+  + total(): int
+}
+
+class CalculatorMemento {
+  - total: int
+  - history: list
+  + get_total(): int
+  + get_history(): list
+}
+
+Calculator --> CalculatorMemento: creates
+Calculator --> CalculatorMemento: sets
+@enduml
